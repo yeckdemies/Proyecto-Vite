@@ -154,6 +154,10 @@ main {
   justify-content: space-between;
 }
 
+#filter {
+  cursor: pointer;
+}
+
 .left {
   background-image: url(/assets/images/card05.png.png);
   position: sticky;
