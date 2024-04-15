@@ -147,8 +147,6 @@ const generarGrid = (productList) => {
     img.alt = product.name;
     img.className = 'product-img';
 
-    console.log(img);
-
     const div = document.createElement('div');
     div.className = 'product-text-container';
 
@@ -160,7 +158,7 @@ const generarGrid = (productList) => {
     p.className = 'product-text';
     p.innerText = product.description;
 
-    div.append(h2, p);
+    div.append(img, h2, p);
 
     article.append(div);
     sectionCafeGrid.append(article);
@@ -168,22 +166,3 @@ const generarGrid = (productList) => {
 };
 
 generarGrid(products);
-
-/* <article class='product'>
-  <img
-    src='assets/images/SBX-UK-MOP-Latte.jpeg'
-    alt='Cafe con
-              leche'
-    class='product-img'
-  />
-  <div class='product-text-container'>
-    <h2 class='product-title'>Bebidas Espresso</h2>
-    <p class='product-text'>
-      Bebidas con los mejores granos de café 100% arábica, cuidadosamente
-      seleccionados y tostados al más puro estilo Starbucks®.
-    </p>
-    <a href='#' class='product-button'>
-      Mas Info
-    </a>
-  </div>
-</article>; */
