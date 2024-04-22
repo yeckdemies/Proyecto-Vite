@@ -69,11 +69,17 @@
             bebida perfecta y personal. El grano se merece que uno se sienta tan
             apasionado por el café como nosotros (y como tú), ¿no crees?
           </p>
-        </section>
-        <section class="filter">
-          <button type="button" class="product-button" id="filter">
+          <button type="button" class="product-button" id="filterButton">
             Filtrar
           </button>
+        </section>
+        <section id="filter" class="filtros hidden">
+          <label for="selectIngredientes">Filtrar por ingrediente</label>
+          <select name="ingredientes" id="selectIngredientes"></select>
+          <label for="price">Filtrar por precio</label>
+          <input type="number" name="price" id="price" />
+          <button type="button">Buscar</button>
+          <button type="button">Limpiar filtros</button>
         </section>
         <section class="cafeGrid"></section>
         <section class="carta-section">
@@ -91,7 +97,7 @@
         </ul>
       </section>
       <div class="line"></div>
-      <setion class="social">
+      <section class="social">
         <ul>
           <li>
             <a href="#"
@@ -112,7 +118,7 @@
             <a href="#"><img src="assets/images/tictoc.png" alt="Tic Toc" /></a>
           </li>
         </ul>
-      </setion>
+      </section>
       <section class="menu-footer2">
         <ul>
           <li>
