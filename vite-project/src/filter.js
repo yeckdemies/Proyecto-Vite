@@ -1,6 +1,9 @@
 import { ingredientes } from './utils';
+import { generarGrid } from './grid';
+import { products } from './list';
 
 const select = document.querySelector('#selectIngredientes');
+const inputPrecio = document.querySelector('#price');
 
 const generaFiltros = () => {
   select.innerHTML = '';
@@ -14,10 +17,12 @@ const generaFiltros = () => {
 
   const filter = document.querySelector('#filter');
   filter.classList.toggle('hidden');
-};
 
-select.addEventListener('change', () => {
-  console.log(select.value);
-});
+  if (filter.classList[1] == 'hidden') {
+    select.selectedIndex = -1;
+    inputPrecio.value = '';
+    generarGrid(products);
+  }
+};
 
 export { generaFiltros };

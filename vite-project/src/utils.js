@@ -23,7 +23,28 @@ const extraerIngredientes = (productList) => {
   eliminarDuplicados(ingredientes);
   return ingredientes;
 };
-
 const ingredientes = extraerIngredientes(products);
 
-export { ingredientes };
+const filtrarIngredientes = (element) => {
+  const newListProduct = [];
+  for (const product of products) {
+    for (let i = 0; i < product.ingredientes.length; i++) {
+      if (product.ingredientes[i].includes(element)) {
+        newListProduct.push(product);
+      }
+    }
+  }
+  return newListProduct;
+};
+
+const filtrarPrecio = (element, listProductActive) => {
+  const newListProduct = [];
+  for (const product of listProductActive) {
+    if (product.price <= element) {
+      newListProduct.push(product);
+    }
+  }
+  return newListProduct;
+};
+
+export { ingredientes, filtrarIngredientes, filtrarPrecio };

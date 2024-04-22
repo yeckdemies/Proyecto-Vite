@@ -33,4 +33,8 @@ const generarGrid = (productList) => {
   });
 };
 
-export { generarGrid };
+const limpiarGrid = () => {
+  sectionCafeGrid.innerHTML = '';
+};
+
+export { generarGrid, limpiarGrid };
