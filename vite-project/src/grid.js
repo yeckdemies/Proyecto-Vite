@@ -1,6 +1,13 @@
 const sectionCafeGrid = document.querySelector('.cafeGrid');
 
 const generarGrid = (productList) => {
+  if (productList == '') {
+    const h2 = document.createElement('h2');
+    h2.className = 'product-title';
+    h2.innerText = `No hay resultados con los filtros seleccionados.`;
+    sectionCafeGrid.append(h2);
+  }
+
   productList.forEach((product) => {
     const article = document.createElement('article');
     article.className = 'product';

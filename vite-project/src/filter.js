@@ -1,12 +1,18 @@
 import { ingredientes } from './utils';
 import { generarGrid } from './grid';
 import { products } from './list';
+import { limpiarGrid } from './grid';
 
 const select = document.querySelector('#selectIngredientes');
 const inputPrecio = document.querySelector('#price');
 
 const generaFiltros = () => {
-  select.innerHTML = '';
+  if (inputPrecio.value != '' || select.value != '') {
+    limpiarGrid();
+    select.value = -1;
+    inputPrecio.value = '';
+  }
+
   ingredientes.forEach((ingrediente) => {
     const option = document.createElement('option');
     option.innerText = ingrediente;
