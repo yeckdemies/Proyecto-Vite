@@ -25,6 +25,7 @@ const generaFiltros = () => {
   filter.classList.toggle('hidden');
 
   if (filter.classList[1] == 'hidden') {
+    limpiarGrid();
     select.selectedIndex = -1;
     inputPrecio.value = '';
     generarGrid(products);

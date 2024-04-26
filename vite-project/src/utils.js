@@ -47,4 +47,17 @@ const filtrarPrecio = (element, listProductActive) => {
   return newListProduct;
 };
 
-export { ingredientes, filtrarIngredientes, filtrarPrecio };
+const productsAleatorios = (listProduct, cantidad) => {
+  const elementosAleatorios = [];
+
+  const copiaArray = listProduct.slice();
+
+  for (let i = 0; i < cantidad; i++) {
+    const indiceAleatorio = Math.floor(Math.random() * copiaArray.length);
+    elementosAleatorios.push(copiaArray.splice(indiceAleatorio, 1)[0]);
+  }
+
+  return elementosAleatorios;
+};
+
+export { ingredientes, filtrarIngredientes, filtrarPrecio, productsAleatorios };

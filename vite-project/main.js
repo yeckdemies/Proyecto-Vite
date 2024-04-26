@@ -2,8 +2,11 @@ import './style.css';
 import { products } from './src/list';
 import { generarGrid, limpiarGrid } from './src/grid';
 import { generaFiltros } from './src/filter';
-import { filtrarIngredientes, filtrarPrecio } from './src/utils';
-
+import {
+  filtrarIngredientes,
+  filtrarPrecio,
+  productsAleatorios
+} from './src/utils';
 const initApp = () => {
   generarGrid(products);
 
@@ -14,6 +17,7 @@ const initApp = () => {
   const buttonLimpiar = document.querySelector('#limpiar');
 
   buttonFilter.addEventListener('click', () => {
+    select.innerText = '';
     generaFiltros();
   });
 
@@ -38,12 +42,10 @@ const initApp = () => {
   });
 
   buttonLimpiar.addEventListener('click', () => {
-    if (inputPrecio.value != '' || select.value != '') {
-      limpiarGrid();
-      select.value = -1;
-      inputPrecio.value = '';
-      generarGrid(products);
-    }
+    limpiarGrid();
+    select.value = -1;
+    inputPrecio.value = '';
+    generarGrid(products);
   });
 };
 

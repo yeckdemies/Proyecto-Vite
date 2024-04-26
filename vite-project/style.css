@@ -58,7 +58,6 @@ body {
 }
 
 /* Elementos del Header */
-
 header {
   box-shadow: var(--ypn-shadow);
   position: relative;
@@ -153,7 +152,10 @@ main {
   display: flex;
   justify-content: space-between;
 }
-#filter:hover {
+
+#filterButton,
+#buscar,
+#limpiar:hover {
   cursor: pointer;
 }
 
@@ -226,7 +228,29 @@ main {
   align-items: flex-start;
   width: 100%;
   box-shadow: var(--ypn-shadow);
+  cursor: pointer;
 }
+
+.tooltiptext {
+  z-index: 1;
+  visibility: hidden;
+  width: 150px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tooltiptext.show {
+  visibility: visible;
+  opacity: 1;
+}
+
 .product-img {
   width: 100%;
   display: block;
@@ -268,6 +292,22 @@ main {
 
 .carta-section > a {
   width: 40px;
+}
+
+#buscar,
+#limpiar {
+  background-color: var(--ypn-blanco-general);
+  border: 1px solid var(--ypn-button-color2);
+  border-radius: 2em;
+  width: 150px;
+}
+
+#buscar:hover,
+#limpiar:hover {
+  background-color: var(--ypn-shadow);
+  border: 1px solid var(--ypn-button-color2);
+  border-radius: 2em;
+  width: 150px;
 }
 
 /* Footer */
@@ -334,6 +374,9 @@ footer {
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
 }
 
 .hidden {
@@ -381,6 +424,30 @@ footer {
   }
   .cafeGrid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .full-width {
+    flex-grow: 1;
+  }
+
+  .filtros {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 170px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+  }
+
+  .filtros > * {
+    margin-bottom: 10px;
+  }
+
+  .tooltiptext {
+    font-size: 12px;
   }
 
   footer {
